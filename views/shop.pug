@@ -3,7 +3,7 @@ html(lang="en")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    title My Shop
+    title #{docTitle}
     link(rel="stylesheet", href="/css/main.css")
     link(rel="stylesheet", href="/css/product.css")
   body
@@ -14,3 +14,23 @@ html(lang="en")
             a.active(href="/") Shop
           li.main-header_item
             a(href="/admin/add-product") Add Product
+    main
+      if prods.length > 0
+        .grid
+          each product in prods
+            article.card.product-item
+              header.card__header
+                h1.product__title #{product.title}
+              div.card__image
+                img(src="https://shop.countdown.co.nz/Content/ProductImages/large/9415012150017.jpg/Champion-Standard-Flour.jpg", alt="Flour")
+              div.card__content
+                h2.product_price $4.00
+                p.product_description A low protein flour suitable for cookies,sponge cakes,muffins and scones
+              .card__actions
+                button.btn Add to Cart
+      else 
+        h1 No Products
+
+
+
+    
