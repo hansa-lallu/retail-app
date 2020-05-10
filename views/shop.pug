@@ -8,14 +8,14 @@ block content
       .grid
         each product in prods
           article.card.product-item
-            header.card__header
-              h1.product__title #{product.title}
-            div.card__image
+            header.card_header
+              h1.product_title #{product.title}
+            div.card_image
               img(src="https://shop.countdown.co.nz/Content/ProductImages/large/9415012150017.jpg/Champion-Standard-Flour.jpg", alt="Flour")
-            div.card__content
+            div.card_content
               h2.product_price $4.00
-              p.product_description A low protein flour suitable for cookies,sponge cakes,muffins and scones
-            .card__actions
+              p.product_description A low protein flour suitable for cookies, sponge cakes, muffins and scones
+            .card_actions
               button.btn Add to Cart
   else 
     h1 No Products
