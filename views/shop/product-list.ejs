@@ -14,21 +14,22 @@
                             <h1 class="product_title"><%= product.title %></h1>
                         </header>
                         <div class="card_image">
-                            <img src="https://shop.countdown.co.nz/Content/ProductImages/large/9415012150017.jpg/Champion-Standard-Flour.jpg"
-                                alt="Standard-Flour">
+                            <img src="<%= product.imageUrl %>" alt="<%= product.title %>">
                         </div>
                         <div class="card_content">
-                            <h2 class="product_price">$4.00</h2>
-                            <p class="product_description">A low protein flour suitable for cookies, sponge cakes, muffins and scones</p>
+                            <h2 class="product_price">$<%= product.price %></h2>
+                            <p class="product_description"><%= product.description %></p>
                         </div>
                         <div class="card_actions">
-                            <button class="btn">Add to Cart</button>
+                            <form action="/add-to-cart" method="POST">
+                                <button class="btn">Add to Cart</button>
+                            </form>
                         </div>
                     </article>
-                <% } %>
+                    <% } %>
             </div>
-        <% } else { %>
-            <h1>No Products Found!</h1>
-        <% } %>
+            <% } else { %>
+                <h1>No Products Found!</h1>
+                <% } %>
     </main>
 <%- include('../includes/end.ejs') %>
