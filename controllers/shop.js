@@ -11,16 +11,6 @@ exports.getProducts = (req, res, next) => {
   });
 };
 
-exports.getIndex = (req, res, next) => {
-  Product.fetchAll(products => {
-    res.render('shop/index', {
-      prods: products,
-      pageTitle: 'Shop',
-      path: '/'
-    });
-  });
-};
-
 exports.getProduct = (req, res, next) => {
   const prodId = req.params.productId;
   Product.findById(prodId, product => {
@@ -28,6 +18,16 @@ exports.getProduct = (req, res, next) => {
       product: product,
       pageTitle: product.title,
       path: '/products'
+    });
+  });
+};
+
+exports.getIndex = (req, res, next) => {
+  Product.fetchAll(products => {
+    res.render('shop/index', {
+      prods: products,
+      pageTitle: 'Shop',
+      path: '/'
     });
   });
 };
