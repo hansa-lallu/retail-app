@@ -28,12 +28,10 @@ exports.postAddProduct = (req, res, next) => {
 
 exports.getEditProduct = (req, res, next) => {
   const editMode = req.query.edit;
-  console.log("EDIT MODE",editMode)
   if (!editMode) {
     return res.redirect('/');
   }
   const prodId = req.params.productId;
-
   Product.findById(prodId)
     .then(product => {
       if (!product) {
@@ -63,7 +61,6 @@ exports.postEditProduct = (req, res, next) => {
     updatedImageUrl,
     prodId
   );
-
   product
     .save()
     .then(result => {
@@ -85,10 +82,12 @@ exports.getProducts = (req, res, next) => {
     .catch(err => console.log(err));
 };
 
-// exports.postDeleteProduct = (req, res, next) => {
-//   const prodId = req.body.productId;
-//   Product.deleteById(prodId);
-//   res.redirect('/admin/products');
-// };
-
-
+exports.postDeleteProduct = (req, res, next) => {
+  const prodId = req.body.productId;
+  Product.deleteById(prodId)
+    .then(() => {
+      console.log('DESTROYED PRODUCT');
+      res.redirect('/admin/products');
+    })
+    .catch(err => console.log(err));
+};
