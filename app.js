@@ -33,7 +33,7 @@ app.use(shopRoutes);
 app.use(errorController.get404);
 
 mongoose
-  .connect(***REMOVED***)
+  .connect()
   .then(result => {
     app.listen(3000);
   }).catch(err => {
