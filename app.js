@@ -33,7 +33,7 @@ app.use(shopRoutes);
 app.use(errorController.get404);
 
 mongoose
-  .connect('mongodb+srv://hansa-lallu:***REMOVED***@feijoa-rybfz.mongodb.net/shop?authSource=admin&replicaSet=Feijoa-shard-0&w=majority&readPreference=primary&appname=MongoDB%20Compass&retryWrites=true&ssl=true')
+  .connect(***REMOVED***)
   .then(result => {
     app.listen(3000);
   }).catch(err => {
