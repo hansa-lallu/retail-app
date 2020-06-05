@@ -1,3 +1,4 @@
+require('dotenv').config();
 const path = require('path')
 
 const express = require('express');
@@ -33,7 +34,7 @@ app.use(shopRoutes);
 app.use(errorController.get404);
 
 mongoose
-  .connect()
+  .connect(process.env.DB_HOST)
   .then(result => {
     app.listen(3000);
   }).catch(err => {
