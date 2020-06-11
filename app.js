@@ -23,7 +23,7 @@ const adminRoutes = require('./routes/admin')
 const shopRoutes = require('./routes/shop')
 const authRoutes = require('./routes/auth')
 
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(
   session({
@@ -32,10 +32,13 @@ app.use(
     saveUninitialized: false,
     store: store
   })
-);  
+);
 
 app.use((req, res, next) => {
-  User.findById('5edc622d537908cc12bd3fe1')
+  if (!req.session.user) {
+    return next();
+  }
+  User.findById(req.session.user._id)
     .then(user => {
       req.user = user;
       next();
