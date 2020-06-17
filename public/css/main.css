@@ -58,7 +58,6 @@ form {
 .main-header_item {
   margin: 0 1rem;
   padding: 0;
-
 }
 
 .main-header_item a,
@@ -78,7 +77,6 @@ form {
 .main-header__item button:active {
   color: #05c5af;
 }
-
 
 .mobile-nav {
   width: 30rem;
@@ -111,16 +109,23 @@ form {
   padding: 0;
 }
 
-.mobile-nav_item a {
+.mobile-nav_item a,
+.mobile-nav_item button {
+  font: inherit;
   text-decoration: none;
   color: black;
   font-size: 1.5rem;
   padding: 0.5rem 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }
 
-.mobile-nav_item a:active,
-.mobile-nav_item a:hover,
-.mobile-nav_item a.active {
+.mobile-nav__item a:active,
+.mobile-nav__item a:hover,
+.mobile-nav__item a.active,
+.mobile-nav__item button:hover,
+.mobile-nav__item button:active {
   background: #05c5af;
   color: white;
   border-radius: 3px;
@@ -213,6 +218,17 @@ form {
 .btn:hover,
 .btn:active {
   background-color: #05c5af;
+  color: white;
+}
+
+.btn.danger {
+  color: red;
+  border-color: red;
+}
+
+.btn.danger:hover,
+.btn.danger:active {
+  background: red;
   color: white;
 }
 
