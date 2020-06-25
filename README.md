@@ -6,7 +6,7 @@ A CRUD application for products to learn Node.js
 ![Signup](/public/readme_images/Sign-up.png "Sign-up")
 
 ### Products for sale
-![Products](/public/readme_images/products.png "Products")
+![Products](/public/readme_images/Products.png "Products")
 
 ### Your Cart
 ![Cart](/public/readme_images/Cart.png "Cart")
