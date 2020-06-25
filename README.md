@@ -18,3 +18,4 @@ A CRUD application for products to learn Node.js
 
 - Work in progress
 - Styling to be improved
+- Would be nice to implement React
