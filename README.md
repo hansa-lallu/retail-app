@@ -1,1 +1,20 @@
 A CRUD application for products to learn Node.js
+
+## Screenshots
+
+### Sign up
+![Signup](/public/readme_images/Sign-up.png "Sign-up")
+
+### Products for sale
+![Products](/public/readme_images/products.png "Products")
+
+### Your Cart
+![Cart](/public/readme_images/Cart.png "Cart")
+
+### Admin add a product
+![add-product](/public/readme_images/add-product.png "add-product")
+
+## Status
+
+- Work in progress
+- Styling to be improved
